@@ -1,6 +1,10 @@
 import React from 'react';
 import './Navbar.css';
 import Logo from '../../assets/Logo';
+import { FaTimes } from 'react-icons/fa';
+import {menu} from '../../data';
+import {Link} from 'react-scroll';
+
 
 const Navbar = () => {
     return (
@@ -10,12 +14,19 @@ const Navbar = () => {
             </div>
 
             <aside className="flex__center sidebar">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact">Contact</a>
+                <div className="flex sidebar__top">
+                    <span className="icon__container close__btn">
+                        <FaTimes />
+                    </span>
+                </div>
+                <div className="flex sidebar__middle">
+                    {
+                        menu.map((list, index) => {
+                            <Link to={list.name.toLowerCase()}>{list.name}</Link>
+                        })
+                    }
+                    
+                </div>
             </aside>
         </nav>
     );
