@@ -4,7 +4,8 @@ import Logo from "../../assets/Logo";
 import { FaTimes } from "react-icons/fa";
 import { menu } from "../../data";
 import { Link } from "react-scroll";
-import { FaArrowRightFromSquare } from "react-icons/fa";    // Add this line
+import { FaArrowRightFromSquare, FaBarsStaggered } from "react-icons/fa6";    // Add this line
+
 
 const Navbar = () => {
   return (
@@ -37,11 +38,13 @@ const Navbar = () => {
         </div>
       </aside>
       <div className="flex__container buttons__wrapper">
-        <Link to="contact" className="btn flex__center hire__btn" spy={true} smooth={true} offset={-70} duration={500}>
+        <Link to="contact" className="btn flex__center hire__btn">
             Hire Me <div className="flex__center icon">
                 <FaArrowRightFromSquare />
             </div>
         </Link>
+
+        <FaBarsStaggered className="menu"/>
       </div>
     </nav>
   );
